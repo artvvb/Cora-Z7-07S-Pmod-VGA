@@ -1,0 +1,57 @@
+# Blacklist everything
+/*
+
+# whitelist the necessary files and folders, this gets everything from inside them too
+!.gitignore
+!.gitmodules
+!README.md
+!proj/
+!repo/
+!sdk/
+!src/
+!vivado-boards/
+!digilent-vivado-scripts/
+
+proj/*
+!proj/project_info.tcl
+
+repo/**
+!repo/vivado-library
+!repo/local
+!repo/local/**
+!repo/cache
+repo/cache/**
+
+sdk/.metadata
+sdk/**/*RemoteSystemsTempFiles
+sdk/**/*Debug/*
+sdk/**/*Release
+sdk/**/*webtalk
+sdk/.sdk
+sdk/*.log
+# ignore everything in the hw_platform
+sdk/*hw_platform*/*
+# except
+!sdk/*hw_platform*/*.hdf
+!sdk/*hw_platform*/.*project
+# ignore everything in the BSP
+sdk/*_bsp*/*
+# except
+!sdk/*_bsp*/system.mss
+!sdk/*_bsp*/Makefile
+!sdk/*_bsp*/.*project
+
+!src/bd/system.tcl
+src/constraints/*
+!src/constraints/*.xdc
+src/hdl/*
+!src/hdl/*.vhd
+!src/hdl/*.v
+src/ip/*/**
+!src/ip/*/*.xci
+!src/others/*
+
+vivado-boards/*
+digilent-vivado-scripts/*
+
+!**/.keep
